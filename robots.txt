@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /trip/
+
+Sitemap: https://teetrip.ca/sitemap.xml
