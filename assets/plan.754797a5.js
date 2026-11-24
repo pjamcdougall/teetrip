@@ -7,18 +7,18 @@ var hm=function(m){return window.TT?TT.hm(m):String(m)};
 var root=$("#pSteps");if(!root)return;
 var RO=location.pathname.indexOf("/trip/")>=0;
 var D,CM={},SMp={},S;
-var KEY="teetrip-plan-v1";
+var KEY="teetrip-plan-v1",PRINTING=false,STEPS=["Where you're staying","When and who","Pick your courses","Your days","Cost and sharing"];
 var STORE=(function(){try{localStorage.setItem("tt-x","1");localStorage.removeItem("tt-x");return localStorage}catch(e){return null}})();
 var KIND={coffee:"Coffee",food:"Quick food",gas:"Gas",grocery:"Groceries",liquor:"Liquor store",pharm:"Pharmacy"};
 var ARRN={none:"Already on the Island",bridge:"the Confederation Bridge",ferry:"the ferry at Wood Islands",yyg:"Charlottetown airport"};
 var MON=["January","February","March","April","May","June","July","August","September","October","November","December"],WD=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-function defaults(){return {v:1,stay:"cav",arr:"none",start:"2027-07-08",days:3,players:4,names:"",allow:30,plan:[[],[],[]],stops:{},rest:{},sort:"drive",view:"all"}}
+function defaults(){return {v:1,stay:"cav",arr:"none",start:"2027-07-08",days:3,players:4,names:"",allow:30,plan:[[],[],[]],stops:{},rest:{},sort:"drive",view:"all",step:0}}
 function save(){if(RO||!STORE)return;try{STORE.setItem(KEY,JSON.stringify(S))}catch(e){}}
 function load(){var s=null;if(RO){var m=location.hash.match(/t=([^&]+)/);if(m)try{s=JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g,"+").replace(/_/g,"/")))))}catch(e){s=null}}
   else if(STORE){try{s=JSON.parse(STORE.getItem(KEY))}catch(e){s=null}}
   s=Object.assign(defaults(),s||{});fit(s);return s}
-function fit(s){s.days=Math.max(1,Math.min(7,+s.days||1));while(s.plan.length<s.days)s.plan.push([]);s.plan.length=s.days;s.players=Math.max(1,Math.min(40,+s.players||1))}
+function fit(s){s.days=Math.max(1,Math.min(7,+s.days||1));while(s.plan.length<s.days)s.plan.push([]);s.plan.length=s.days;s.players=Math.max(1,Math.min(40,+s.players||1));s.step=Math.max(0,Math.min(4,+s.step||0))}
 function enc(s){var c={v:1,stay:s.stay,arr:s.arr,start:s.start,days:s.days,players:s.players,allow:s.allow,plan:s.plan,stops:s.stops,rest:s.rest};return btoa(unescape(encodeURIComponent(JSON.stringify(c)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
 
 function mm(a,b){return D.M[a+"|"+b]||D.M[b+"|"+a]||null}
@@ -40,7 +40,15 @@ function fee(c,d){var f=D.fees[c.id];if(!f)return null;if(f.periods){var md=("0"
 /* ---------- render ---------- */
 function render(){fit(S);save();var h="";
   if(RO)h+='<div class="pstep" style="background:var(--tint);border-color:#DDEBC0"><p style="font-weight:600;color:var(--pine)">You\'re looking at a shared trip.</p><p class="small" style="margin-top:6px">Make it yours to change the stay, the days or the courses. It will save on this device.</p><div class="row" style="margin-top:12px"><button class="btn flag sm" data-a="mine">Make it mine</button><a class="btn ghost sm" href=R+"plan/index.html">Start a new plan</a></div></div>';
-  h+=stepStay()+stepWhen()+stepCourses()+stepDays()+stepCost();root.innerHTML=h;drawMap();if(RO)$$("input,select,button:not([data-a=mine]):not([data-a=copylink]):not([data-a=print]):not([data-a=book]):not([data-a=view])",root).forEach(function(e){e.disabled=true})}
+  var all=RO||PRINTING;
+  if(all)h+=stepStay()+stepWhen()+stepCourses()+stepDays()+stepCost();
+  else{var rounds=S.plan.reduce(function(n,d){return n+d.length},0),i=S.step,fns=[stepStay,stepWhen,stepCourses,stepDays,stepCost];
+    var hint=[SMp[S.stay].n,S.days+" day"+(S.days===1?"":"s")+", "+S.players+" golfer"+(S.players===1?"":"s"),rounds?rounds+" round"+(rounds===1?"":"s"):"None yet","",""];
+    h+='<ol class="wz" aria-label="Steps">'+STEPS.map(function(n,k){return '<li class="'+(k===i?"on":k<i?"done":"")+'"><button type="button" data-a="step" data-v="'+k+'"'+(k===i?' aria-current="step"':'')+'><b>'+(k<i?"✓":k+1)+'</b><span>'+n+(k<i&&hint[k]?'<small>'+esc(hint[k])+'</small>':'')+'</span></button></li>'}).join("")+'</ol>';
+    h+=fns[i]();
+    var need=i===2&&!rounds;
+    h+='<div class="wznav">'+(i>0?'<button type="button" class="btn ghost" data-a="step" data-v="'+(i-1)+'">Back</button>':'<a class="linkbtn" href="'+R+'book/index.html">Just want one round? Book a tee time</a>')+(i<4?'<span class="wzr">'+(need?'<span class="small">Add at least one course to carry on.</span>':'')+'<button type="button" class="btn flag" data-a="step" data-v="'+(i+1)+'"'+(need?' disabled':'')+'>Next: '+STEPS[i+1].toLowerCase()+'</button></span>':'<span class="small">That is your trip. Share the link, or go back to change anything.</span>')+'</div>'}
+  root.innerHTML=h;drawMap();if(RO)$$("input,select,button:not([data-a=mine]):not([data-a=copylink]):not([data-a=print]):not([data-a=book]):not([data-a=view])",root).forEach(function(e){e.disabled=true})}
 function opt(name,val,items){return '<div class="opt" role="group">'+items.map(function(it){return '<button type="button" data-a="set" data-k="'+name+'" data-v="'+it[0]+'" aria-pressed="'+(String(val)===String(it[0]))+'">'+esc(it[1])+(it[2]?'<small>'+esc(it[2])+'</small>':"")+'</button>'}).join("")+'</div>'}
 function stepStay(){var near=D.courses.map(function(c){var m=mm("c:"+c.id,"s:"+S.stay);return m?m[0]:999}).filter(function(m){return m<=30}).length;
   var pk=D.pkg.filter(function(p){return ({"Mill River Resort":"west","Rodd Brudenell River Resort":"brud","Rodd Crowbush Golf & Beach Resort":"stpeters"})[p.host]===S.stay});
@@ -61,7 +69,7 @@ function stepCourses(){var rows=D.courses.map(function(c){var m=mm("c:"+c.id,"s:
     var inp=S.plan.some(function(d){return d.some(function(x){return x.c===r.c.id})});
     h+='<li><span class="nm"><a href=R+"courses/'+r.c.slug+'/index.html">'+esc(r.c.n)+'</a><span class="sub">'+esc(r.c.town)+', '+r.c.h+' holes'+(inp?' · in your plan':'')+'</span></span><span class="dr">'+r.m+' min<br><span class="muted">'+r.km+' km</span></span>'+
       '<select class="addsel" data-a="add" data-c="'+r.c.id+'" aria-label="Add '+esc(r.c.n)+' to a day"><option value="">Add</option>'+S.plan.map(function(_,i){return '<option value="'+i+'">Day '+(i+1)+'</option>'}).join("")+'</select></li>'});
-  return '<section class="pstep noprint-step"><h2><span class="n">3</span>Courses, by the drive</h2><div class="row" style="justify-content:space-between;margin-bottom:6px"><p class="small">From '+esc(SMp[S.stay].n)+'. No course is ranked or featured.</p><div class="seg" role="group" aria-label="Order"><button type="button" data-a="set" data-k="sort" data-v="drive" aria-pressed="'+(S.sort!=="az")+'">By drive</button><button type="button" data-a="set" data-k="sort" data-v="az" aria-pressed="'+(S.sort==="az")+'">A to Z</button></div></div><ul class="clistp">'+h+'</ul></section>'}
+  return '<section class="pstep noprint-step"><h2><span class="n">3</span>Pick your courses, by the drive</h2><div class="row" style="justify-content:space-between;margin-bottom:6px"><p class="small">From '+esc(SMp[S.stay].n)+'. No course is ranked or featured.</p><div class="seg" role="group" aria-label="Order"><button type="button" data-a="set" data-k="sort" data-v="drive" aria-pressed="'+(S.sort!=="az")+'">By drive</button><button type="button" data-a="set" data-k="sort" data-v="az" aria-pressed="'+(S.sort==="az")+'">A to Z</button></div></div><ul class="clistp">'+h+'</ul></section>'}
 function dayPlan(i){var d=dateOf(i),day=S.plan[i],out=[];var from=(i===0&&S.arr!=="none")?"a:"+S.arr:"s:"+S.stay;var fromN=(i===0&&S.arr!=="none")?ARRN[S.arr]:SMp[S.stay].n;
   var prevEnd=null,prevC=null;
   day.forEach(function(r,k){var c=CM[r.c];var a=k===0?from:"c:"+prevC.id;var m=mm(a,"c:"+c.id)||[0,0];var st=k===0?(S.stops[i]||[]):[];var extra=st.reduce(function(s,x){return s+x.extra+5},0);
@@ -76,7 +84,7 @@ function stepDays(){var h="";for(var i=0;i<S.days;i++){var d=dateOf(i),P=dayPlan
   h+='<div class="pday"><h3>Day '+(i+1)+'<small>'+dlabel(d)+(sn.set!=null?' · sunset about '+hm(sn.set):'')+'</small></h3>';
   if(!P.length){if(S.rest[i]){var nd=D.nearDrive[S.stay],dr=D.drives.filter(function(x){return x.k===nd[0]})[0];
       h+='<p class="okn">Rest day. Nearest scenic drive: <b>'+esc(dr.n)+'</b>, a '+dr.km+' km route ('+esc(dr.sub)+'), starting about '+nd[1]+' km from '+esc(SMp[S.stay].n)+'.</p><button class="linkbtn" data-a="rest" data-d="'+i+'">Not a rest day</button>'}
-    else h+='<p class="small" style="margin-top:8px">No round yet. Add a course from step 3, or <button class="linkbtn" data-a="rest" data-d="'+i+'">make it a rest day</button>.</p>'}
+    else h+='<p class="small" style="margin-top:8px">No round yet. <button class="linkbtn" data-a="step" data-v="2">Add a course</button>, or <button class="linkbtn" data-a="rest" data-d="'+i+'">make it a rest day</button>.</p>'}
   P.forEach(function(p){h+='<div class="rnd"><div class="top"><b>'+esc(p.c.n)+'</b><span class="row" style="gap:8px"><label class="sr" for="t'+i+p.k+'">Tee time</label><select id="t'+i+p.k+'" data-a="tee" data-d="'+i+'" data-i="'+p.k+'">'+teeOpts(p.tee)+'</select>'+
     '<button class="btn sm ghost" data-a="book" data-d="'+i+'" data-i="'+p.k+'">Book with the course</button><button class="linkbtn del" data-a="del" data-d="'+i+'" data-i="'+p.k+'" aria-label="Remove '+esc(p.c.n)+' from day '+(i+1)+'">Remove</button></span></div>'+
     '<ul class="tl"><li><b>'+hm(p.leave)+'</b><i></i><span>Leave '+esc(p.fromN)+'</span></li>'+
@@ -117,6 +125,7 @@ function addCourse(cid,di){var day=S.plan[di];var prev=day[day.length-1];var t;
   else{var fr=(di===0&&S.arr!=="none")?"a:"+S.arr:"s:"+S.stay;t=di===0&&S.arr!=="none"?13*60+30:9*60}
   day.push({c:cid,t:Math.min(t,18*60)});delete S.rest[di]}
 root.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b||b.tagName==="SELECT")return;var a=b.getAttribute("data-a");
+  if(a==="step"){S.step=+b.getAttribute("data-v");render();var top=$("#planner");if(top&&top.getBoundingClientRect().top<0)top.scrollIntoView({block:"start"});var hd=root.querySelector(".pstep h2");if(hd){hd.setAttribute("tabindex","-1");hd.focus({preventScroll:true})}return}
   if(a==="set"){var k=b.getAttribute("data-k"),v=b.getAttribute("data-v");S[k]=v;render();var nb=root.querySelector('[data-a=set][data-k="'+k+'"][data-v="'+v+'"]');nb&&nb.focus();return}
   if(a==="del"){S.plan[+b.dataset.d].splice(+b.dataset.i,1);if(+b.dataset.i===0)delete S.stops[b.dataset.d];render();return}
   if(a==="rest"){var d=b.dataset.d;if(S.rest[d])delete S.rest[d];else S.rest[d]=1;render();return}
@@ -124,9 +133,9 @@ root.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(
     if(ix>=0)l.splice(ix,1);else if(l.length<2)l.push({n:q.n,t:q.t,extra:q.extra,kind:kind});else TT.toast("Two stops a day at most");render();return}
   if(a==="book"){book(+b.dataset.d,+b.dataset.i);return}
   if(a==="copylink"){var v2=$("#shareLink").value;(navigator.clipboard?navigator.clipboard.writeText(v2):Promise.reject()).then(function(){TT.toast("Link copied")},function(){$("#shareLink").select();TT.toast("Select the link and copy it")});return}
-  if(a==="print"){window.print();return}
-  if(a==="reset"){if(!S._confirm){S._confirm=1;render();setTimeout(function(){if(S._confirm){delete S._confirm;render()}},4000);return}S=defaults();render();TT.toast("Plan cleared");return}
-  if(a==="mine"){var m2=Object.assign({},S);if(STORE)try{STORE.setItem(KEY,JSON.stringify(m2))}catch(x){}location.href=R+"plan/index.html";return}});
+  if(a==="print"){PRINTING=true;render();window.print();setTimeout(function(){PRINTING=false;render()},400);return}
+  if(a==="reset"){if(!S._confirm){S._confirm=1;render();setTimeout(function(){if(S._confirm){delete S._confirm;render()}},4000);return}S=defaults();render();TT.toast("Plan cleared");var tp=$("#planner");tp&&tp.scrollIntoView({block:"start"});return}
+  if(a==="mine"){var m2=Object.assign({},S,{step:3});if(STORE)try{STORE.setItem(KEY,JSON.stringify(m2))}catch(x){}location.href=R+"plan/index.html";return}});
 document.addEventListener("click",function(e){var b=e.target.closest("[data-a=view]");if(!b)return;S.view=b.dataset.v;save();drawMap()});
 root.addEventListener("change",function(e){var t=e.target;
   if(t.matches("[data-a=add]")&&t.value!==""){addCourse(t.dataset.c,+t.value);var cn=CM[t.dataset.c].n;render();TT.toast(cn+" added to day "+(+t.value+1));return}
@@ -142,10 +151,11 @@ function book(di,i){var p=dayPlan(di)[i],c=p.c,d=dateOf(di);var g=S.players;var 
   $("#bkCopy").onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){TT.toast("Copied")},function(){TT.toast(txt)})};$("#bkClose").onclick=function(){dlg.close()};
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","")}
 
+window.addEventListener("beforeprint",function(){if(!PRINTING&&S){PRINTING=true;render()}});window.addEventListener("afterprint",function(){if(PRINTING){PRINTING=false;render()}});
 /* ---------- start ---------- */
 fetch(R+"assets/plan-data.27ec6bbe.json").then(function(r){return r.json()}).then(function(d){D=d;d.courses.forEach(function(c){CM[c.id]=c});d.stays.forEach(function(s){SMp[s.id]=s});
   S=load();var q=new URLSearchParams(location.search);if(!RO){if(q.get("stay")&&SMp[q.get("stay")])S.stay=q.get("stay");
-    if(q.get("add")&&CM[q.get("add")]){var cid=q.get("add");if(!S.plan.some(function(x){return x.some(function(r){return r.c===cid})})){var di=S.plan.findIndex(function(x){return !x.length});if(di<0)di=0;addCourse(cid,di);setTimeout(function(){TT.toast(CM[cid].n+" added to day "+(di+1))},300)}}
+    if(q.get("add")&&CM[q.get("add")]){var cid=q.get("add");if(!S.plan.some(function(x){return x.some(function(r){return r.c===cid})})){var di=S.plan.findIndex(function(x){return !x.length});if(di<0)di=0;addCourse(cid,di);setTimeout(function(){TT.toast(CM[cid].n+" added to day "+(di+1))},300)}S.step=2}
     if(q.toString())history.replaceState(null,"",location.pathname)}
   if(RO&&!/t=/.test(location.hash)){root.innerHTML='<div class="pstep"><h2>This link doesn\'t hold a trip.</h2><p class="small">It may have been cut short when it was copied. <a href=R+"plan/index.html">Start a plan</a>.</p></div>';return}
   render()}).catch(function(){root.innerHTML='<div class="pstep"><h2>The planner couldn\'t load its data.</h2><p class="small">Check your connection and reload the page. The <a href=R+"courses/index.html">course pages</a> still work.</p></div>'});

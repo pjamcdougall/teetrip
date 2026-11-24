@@ -1,0 +1,630 @@
+[
+ {
+  "slug": "andersons-creek",
+  "name": "Andersons Creek",
+  "holesOnCard": 18,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": true,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 0,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "avondale",
+  "name": "Avondale",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "flagged": {
+   "13": "No fairway shape mapped for this hole"
+  },
+  "missing": [],
+  "scorecard": true,
+  "counts": {
+   "fairway": 21,
+   "green": 19,
+   "tee": 57,
+   "bunker": 61,
+   "hole": 18
+  }
+ },
+ {
+  "slug": "belfast-highland-greens",
+  "name": "Belfast Highland Greens",
+  "holesOnCard": 9,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "scorecard": false,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 0,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "belvedere",
+  "name": "Belvedere",
+  "holesOnCard": 18,
+  "mappedLines": 5,
+  "drawn": [],
+  "flagged": {
+   "2": "Mapped length 149 yards is 56% off the scorecard's 337",
+   "3": "Mapped length 211 yards is 47% off the scorecard's 401",
+   "4": "Mapped length 296 yards is 19% off the scorecard's 364",
+   "5": "Mapped length 309 yards is 143% off the scorecard's 127"
+  },
+  "missing": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": true,
+  "counts": {
+   "fairway": 16,
+   "green": 17,
+   "tee": 0,
+   "bunker": 33,
+   "hole": 17
+  }
+ },
+ {
+  "slug": "brudenell-river",
+  "name": "Brudenell River",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "flagged": {},
+  "missing": [],
+  "scorecard": true,
+  "counts": {
+   "fairway": 19,
+   "green": 20,
+   "tee": 49,
+   "bunker": 81,
+   "hole": 18
+  }
+ },
+ {
+  "slug": "clyde-river",
+  "name": "Clyde River",
+  "holesOnCard": 18,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": false,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 0,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "countryview",
+  "name": "Countryview",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "flagged": {
+   "11": "Mapped length 261 yards is 9% off the scorecard's 287"
+  },
+  "missing": [],
+  "scorecard": true,
+  "counts": {
+   "fairway": 18,
+   "green": 20,
+   "tee": 46,
+   "bunker": 49,
+   "hole": 18
+  }
+ },
+ {
+  "slug": "crowbush-cove",
+  "name": "The Links at Crowbush Cove",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [
+   1,
+   2,
+   3,
+   4,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16
+  ],
+  "flagged": {
+   "5": "Mapped length 530 yards is 9% off the scorecard's 579",
+   "17": "Mapped length 127 yards is 12% off the scorecard's 113",
+   "18": "Mapped length 388 yards is 12% off the scorecard's 441"
+  },
+  "missing": [],
+  "scorecard": true,
+  "counts": {
+   "fairway": 18,
+   "green": 18,
+   "tee": 60,
+   "bunker": 99,
+   "hole": 18
+  }
+ },
+ {
+  "slug": "dundarave",
+  "name": "Dundarave",
+  "holesOnCard": 18,
+  "mappedLines": 15,
+  "drawn": [
+   1,
+   2,
+   4,
+   5,
+   6,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "flagged": {
+   "3": "Mapped length 401 yards is 12% off the scorecard's 456",
+   "8": "Mapped length 321 yards is 10% off the scorecard's 356"
+  },
+  "missing": [
+   7,
+   9,
+   10
+  ],
+  "scorecard": true,
+  "counts": {
+   "fairway": 17,
+   "green": 15,
+   "tee": 59,
+   "bunker": 77,
+   "hole": 15
+  }
+ },
+ {
+  "slug": "eagles-glenn",
+  "name": "Eagles Glenn",
+  "holesOnCard": 18,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": true,
+  "counts": {
+   "fairway": 13,
+   "green": 10,
+   "tee": 30,
+   "bunker": 36,
+   "hole": 6
+  }
+ },
+ {
+  "slug": "forest-hills",
+  "name": "Forest Hills",
+  "holesOnCard": 9,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "scorecard": false,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 1,
+   "bunker": 0,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "fox-meadow",
+  "name": "Fox Meadow",
+  "holesOnCard": 18,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": true,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 64,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "glasgow-hills",
+  "name": "Glasgow Hills",
+  "holesOnCard": 18,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": true,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 0,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "green-gables",
+  "name": "Green Gables",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   15,
+   16,
+   17,
+   18
+  ],
+  "flagged": {
+   "14": "Mapped length 367 yards is 11% off the scorecard's 331"
+  },
+  "missing": [],
+  "scorecard": true,
+  "counts": {
+   "fairway": 20,
+   "green": 19,
+   "tee": 65,
+   "bunker": 59,
+   "hole": 18
+  }
+ },
+ {
+  "slug": "mill-river",
+  "name": "Mill River",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   9,
+   10,
+   11,
+   12,
+   14,
+   15,
+   16,
+   18
+  ],
+  "flagged": {
+   "8": "Mapped length 467 yards is 11% off the scorecard's 421",
+   "13": "Mapped length 473 yards is 14% off the scorecard's 551",
+   "17": "Mapped length 166 yards is 17% off the scorecard's 142"
+  },
+  "missing": [],
+  "scorecard": true,
+  "counts": {
+   "fairway": 18,
+   "green": 19,
+   "tee": 21,
+   "bunker": 62,
+   "hole": 21
+  }
+ },
+ {
+  "slug": "red-sands",
+  "name": "Red Sands",
+  "holesOnCard": 9,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "scorecard": false,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 0,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "rustico-resort",
+  "name": "Rustico Resort",
+  "holesOnCard": 18,
+  "mappedLines": 0,
+  "drawn": [],
+  "flagged": {},
+  "missing": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "scorecard": false,
+  "counts": {
+   "fairway": 1,
+   "green": 7,
+   "tee": 2,
+   "bunker": 12,
+   "hole": 0
+  }
+ },
+ {
+  "slug": "stanhope",
+  "name": "Stanhope",
+  "holesOnCard": 18,
+  "mappedLines": 18,
+  "drawn": [],
+  "flagged": {
+   "1": "No green shape mapped for this hole",
+   "2": "No green shape mapped for this hole",
+   "3": "No green shape mapped for this hole",
+   "4": "No green shape mapped for this hole",
+   "5": "No green shape mapped for this hole",
+   "6": "No green shape mapped for this hole",
+   "7": "No green shape mapped for this hole",
+   "8": "No green shape mapped for this hole",
+   "9": "No green shape mapped for this hole",
+   "10": "No green shape mapped for this hole",
+   "11": "No green shape mapped for this hole",
+   "12": "No green shape mapped for this hole",
+   "13": "No green shape mapped for this hole",
+   "14": "No green shape mapped for this hole",
+   "15": "No green shape mapped for this hole",
+   "16": "No green shape mapped for this hole",
+   "17": "No green shape mapped for this hole",
+   "18": "No green shape mapped for this hole"
+  },
+  "missing": [],
+  "scorecard": false,
+  "counts": {
+   "fairway": 0,
+   "green": 0,
+   "tee": 0,
+   "bunker": 0,
+   "hole": 18
+  }
+ }
+]

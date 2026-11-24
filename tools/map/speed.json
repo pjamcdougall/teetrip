@@ -1,0 +1,33 @@
+{
+ "normal connection, desktop": {
+  "seconds": 2.5,
+  "mapBytes": 607468,
+  "tileBytes": 216760,
+  "files": {
+   "mapkit/style.js": 3582,
+   "map.ba1fc2e8.js": 16230,
+   "mapkit/maplibre-gl.js": 212035,
+   "mapkit/tilework.js": 5189,
+   "mapkit/tiles/index.wasm": 2516,
+   "mapkit/tiles/o-0.wasm": 107633,
+   "mapkit/tiles/o-1.wasm": 106611,
+   "mapkit/fonts/NotoSans-Regular/0-255.wasm": 76044,
+   "mapkit/fonts/NotoSans-Medium/0-255.wasm": 77628
+  }
+ },
+ "slow phone connection": {
+  "seconds": 5.5,
+  "mapBytes": 500857,
+  "tileBytes": 110149,
+  "files": {
+   "mapkit/style.js": 3582,
+   "map.ba1fc2e8.js": 16230,
+   "mapkit/maplibre-gl.js": 212035,
+   "mapkit/tilework.js": 5189,
+   "mapkit/tiles/index.wasm": 2516,
+   "mapkit/tiles/o-0.wasm": 107633,
+   "mapkit/fonts/NotoSans-Medium/0-255.wasm": 77628,
+   "mapkit/fonts/NotoSans-Regular/0-255.wasm": 76044
+  }
+ }
+}

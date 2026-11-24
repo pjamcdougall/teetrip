@@ -1,0 +1,28 @@
+.smap{background:#C7DDE6}
+@media(max-width:700px){.smap{height:min(64vh,125vw)}}
+.smap .fb .stay{display:none}
+.smap .fb .isl-road{stroke:#55615A;stroke-opacity:.6}
+.smap .maplibregl-canvas:focus-visible{outline:3px solid var(--flag);outline-offset:-3px}
+.smap .maplibregl-ctrl-group{border-radius:12px;overflow:hidden;box-shadow:0 1px 2px rgba(14,59,46,.12),0 6px 18px rgba(14,59,46,.12)}
+.smap .maplibregl-ctrl-group button{width:36px;height:36px}
+.smap .ttwhole{font:600 12.5px/1 var(--sans);color:var(--ink);width:auto!important;padding:0 12px;white-space:nowrap}
+.smap .maplibregl-ctrl-scale{font:600 11px/1.5 var(--sans);color:var(--ink2);background:rgba(246,242,232,.85);border-color:var(--ink2);border-width:0 1.5px 1.5px}
+.smap .maplibregl-ctrl-attrib{font:11px/1.5 var(--sans);background:rgba(246,242,232,.85);border-radius:8px 0 0 0}
+.smap .maplibregl-ctrl-attrib a{color:var(--ink2)}
+.ttpin-a{width:34px;height:34px;border-radius:50%;border:0;background:transparent;padding:0;pointer-events:none;cursor:pointer}
+.ttpin-a:focus{outline:none}
+.ttpin-a:focus-visible{outline:3px solid #22493A;outline-offset:1px;box-shadow:0 0 0 6px rgba(255,255,255,.9)}
+.smap .maplibregl-popup{z-index:3}
+.smap .maplibregl-popup-content{border-radius:16px!important;padding:0!important;font:14px/1.45 var(--sans);color:var(--ink);box-shadow:0 14px 40px rgba(10,46,35,.28)!important}
+.ttcard{padding:14px 16px 16px;min-width:214px}
+.ttcard h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.1;margin:0 30px 2px 0;color:var(--ink)}
+.ttcard p{margin:0;color:var(--ink2);font-size:13.5px}
+.ttcard .num{font-variant-numeric:tabular-nums}
+.ttcard .drive{margin-top:8px;color:var(--ink);font-weight:600}
+.ttcard .drive small{display:block;font-weight:400;font-size:12.5px;color:var(--ink3)}
+.ttcard .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.ttcard .acts a{flex:1 1 auto;text-align:center;font-weight:600;font-size:13.5px;text-decoration:none;border-radius:999px;padding:9px 12px;border:1px solid var(--pine);color:var(--pine);background:#fff;white-space:nowrap}
+.ttcard .acts a.go{background:var(--pine);color:#fff}
+.ttcard .acts a:focus-visible,.ttcard .x:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.ttcard .x{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:19px;line-height:1;cursor:pointer;color:var(--ink)}
+@media(pointer:coarse){.smap .maplibregl-ctrl-group button{width:44px;height:44px}.ttcard .x{width:38px;height:38px}.ttcard .acts a{padding:12px 12px}}
