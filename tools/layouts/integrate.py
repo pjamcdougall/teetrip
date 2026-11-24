@@ -4,9 +4,9 @@ import hashlib, html, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib import DATA, HERE, ROOT
 
-NOTE = "Drawn by TeeTrip from OpenStreetMap. A guide to the hole, not a survey. Yardages are the course's own."
+NOTE = "Drawn by TeeTrip from OpenStreetMap and federal open LiDAR. A guide to the hole, not a survey. Yardages are the course's own."
 CREDIT = ('Shapes &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap contributors</a> (ODbL), read November 2026. '
-          'Ground heights: Natural Resources Canada, High Resolution Digital Elevation Model, PEI 2020 (Open Government Licence &ndash; Canada).')
+          'Ground shading, tree lines, heights and some tee boxes: Natural Resources Canada, High Resolution Digital Elevation Model, PEI 2020, 1 m LiDAR (Open Government Licence &ndash; Canada).')
 A, B = '<!--layout:start-->', '<!--layout:end-->'
 
 def asset(name, ext):
@@ -52,8 +52,8 @@ def main():
     # About page: credit the sources
     p = os.path.join(ROOT, 'about', 'index.html'); t = open(p).read()
     t = re.sub(r'<li data-lay>.*?</li>', '', t, flags=re.S)
-    li = ('<li data-lay><b>Hole drawings</b><span>Drawn by TeeTrip from OpenStreetMap contributors (ODbL), read November 2026. A guide to the hole, not a survey. Par and yards are each course\'s own scorecard.</span></li>'
-          '<li data-lay><b>Ground heights on hole drawings</b><span>Natural Resources Canada, High Resolution Digital Elevation Model, Prince Edward Island 2020, 1 metre (Open Government Licence &ndash; Canada)</span></li>')
+    li = ('<li data-lay><b>Hole drawings</b><span>Drawn by TeeTrip from OpenStreetMap contributors (ODbL), read November 2026, and federal open LiDAR. A guide to the hole, not a survey. Par and yards are each course\'s own scorecard.</span></li>'
+          '<li data-lay><b>Ground shading, tree lines and heights on hole drawings</b><span>Natural Resources Canada, High Resolution Digital Elevation Model, Prince Edward Island 2020, 1 metre LiDAR (Open Government Licence &ndash; Canada)</span></li>')
     k = t.index('</li>', t.index('<b>Map, roads and land</b>')) + 5
     open(p, 'w').write(t[:k] + li + t[k:])
 

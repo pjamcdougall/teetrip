@@ -8,7 +8,8 @@
 "yardage": 376,
 "measuredYards": 369,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "A straight hole. Four bunkers by the green and two bunkers along the way.",
 "file": "hole-01.svg"
@@ -19,7 +20,8 @@
 "yardage": 524,
 "measuredYards": 509,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "A straight hole. Two bunkers by the green and five bunkers along the way.",
 "file": "hole-02.svg"
@@ -28,8 +30,13 @@
 "number": 3,
 "par": 4,
 "yardage": 456,
-"drawn": false,
-"flag": "Mapped length 401 yards is 12% off the scorecard's 456"
+"measuredYards": 430,
+"drawn": true,
+"teeFrom": "LiDAR",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "A straight hole. Three bunkers by the green and five bunkers along the way.",
+"file": "hole-03.svg"
 },
 {
 "number": 4,
@@ -37,7 +44,8 @@
 "yardage": 555,
 "measuredYards": 543,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "A straight hole with water down the right. Three bunkers by the green and four bunkers along the way.",
 "file": "hole-04.svg"
@@ -48,7 +56,8 @@
 "yardage": 150,
 "measuredYards": 161,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "One shot to the green with water down the left. Four bunkers by the green.",
 "file": "hole-05.svg"
@@ -59,7 +68,8 @@
 "yardage": 417,
 "measuredYards": 425,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "A straight hole. Three bunkers by the green and five bunkers along the way.",
 "file": "hole-06.svg"
@@ -98,7 +108,8 @@
 "yardage": 373,
 "measuredYards": 375,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "start of the mapped hole line",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "Bends gently right with water down the left. Three bunkers by the green.",
 "file": "hole-11.svg"
@@ -109,7 +120,8 @@
 "yardage": 459,
 "measuredYards": 460,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "A straight hole with water to carry. Two bunkers by the green and three bunkers along the way.",
 "file": "hole-12.svg"
@@ -120,7 +132,8 @@
 "yardage": 424,
 "measuredYards": 413,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "Bends gently right. Two bunkers by the green and one bunker along the way.",
 "file": "hole-13.svg"
@@ -131,7 +144,8 @@
 "yardage": 198,
 "measuredYards": 202,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "One shot to the green with water to carry. One bunker by the green.",
 "file": "hole-14.svg"
@@ -142,7 +156,8 @@
 "yardage": 442,
 "measuredYards": 430,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "start of the mapped hole line",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "Dog-leg right with water to carry. One bunker by the green and three bunkers along the way.",
 "file": "hole-15.svg"
@@ -153,7 +168,8 @@
 "yardage": 301,
 "measuredYards": 286,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "Dog-leg right. Four bunkers by the green and two bunkers along the way.",
 "file": "hole-16.svg"
@@ -164,7 +180,8 @@
 "yardage": 207,
 "measuredYards": 203,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "One shot to the green. Two bunkers by the green.",
 "file": "hole-17.svg"
@@ -175,18 +192,19 @@
 "yardage": 525,
 "measuredYards": 512,
 "drawn": true,
-"shapes": "100% OpenStreetMap, 0% imagery",
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
 "flag": null,
 "sentence": "Dog-leg left with water down the right. Three bunkers by the green and six bunkers along the way.",
 "file": "hole-18.svg"
 }
 ],
-"drawn": 13,
+"drawn": 14,
 "of": 18,
 "parAndYardage": "From the course's published scorecard, never measured",
 "sources": [
-"OpenStreetMap contributors (ODbL), read November 24, 2026",
-"Natural Resources Canada, High Resolution Digital Elevation Model, PEI 2020, 1 m (Open Government Licence - Canada), for ground heights only"
+"OpenStreetMap contributors (ODbL), read November 24, 2026: hole lines, fairways, greens, tees, bunkers, water",
+"Natural Resources Canada, High Resolution Digital Elevation Model, PEI 2020, 1 m (Open Government Licence - Canada): ground shading, tree lines, ground heights, and tee boxes the open map is missing"
 ],
-"note": "Drawn by TeeTrip from OpenStreetMap. A guide to the hole, not a survey. Yardages are the course's own."
+"note": "Drawn by TeeTrip from OpenStreetMap and federal open LiDAR. A guide to the hole, not a survey. Yardages are the course's own."
 }
