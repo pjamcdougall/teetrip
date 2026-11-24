@@ -1,0 +1,180 @@
+{
+"course": "Glasgow Hills",
+"slug": "glasgow-hills",
+"holes": [
+{
+"number": 1,
+"par": 4,
+"yardage": 319,
+"measuredYards": 307,
+"drawn": true,
+"teeFrom": "LiDAR",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "A straight hole. Five bunkers by the green and five bunkers along the way.",
+"file": "hole-01.svg"
+},
+{
+"number": 2,
+"par": 4,
+"yardage": 400,
+"measuredYards": 404,
+"drawn": true,
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "A straight hole. Three bunkers by the green and one bunker along the way.",
+"file": "hole-02.svg"
+},
+{
+"number": 3,
+"par": 3,
+"yardage": 166,
+"measuredYards": 166,
+"drawn": true,
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": false,
+"flag": null,
+"sentence": "One shot to the green. One bunker by the green and one bunker short of it.",
+"file": "hole-03.svg"
+},
+{
+"number": 4,
+"par": 5,
+"yardage": 544,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 5,
+"par": 4,
+"yardage": 319,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 6,
+"par": 5,
+"yardage": 476,
+"measuredYards": 475,
+"drawn": true,
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "Dog-leg right with water down the right. Four bunkers by the green and three bunkers along the way.",
+"file": "hole-06.svg"
+},
+{
+"number": 7,
+"par": 3,
+"yardage": 172,
+"measuredYards": 161,
+"drawn": true,
+"teeFrom": "LiDAR",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "One shot to the green. Two bunkers by the green.",
+"file": "hole-07.svg"
+},
+{
+"number": 8,
+"par": 4,
+"yardage": 416,
+"measuredYards": 406,
+"drawn": true,
+"teeFrom": "LiDAR",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "A straight hole.",
+"file": "hole-08.svg"
+},
+{
+"number": 9,
+"par": 4,
+"yardage": 337,
+"measuredYards": 339,
+"drawn": true,
+"teeFrom": "LiDAR",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "Dog-leg left with water to carry. Two bunkers by the green and two bunkers along the way.",
+"file": "hole-09.svg"
+},
+{
+"number": 10,
+"par": 4,
+"yardage": 382,
+"measuredYards": 391,
+"drawn": true,
+"teeFrom": "OpenStreetMap",
+"fairwayMapped": true,
+"flag": null,
+"sentence": "Dog-leg right. Two bunkers by the green and six bunkers along the way.",
+"file": "hole-10.svg"
+},
+{
+"number": 11,
+"par": 4,
+"yardage": 334,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 12,
+"par": 4,
+"yardage": 332,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 13,
+"par": 3,
+"yardage": 216,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 14,
+"par": 5,
+"yardage": 517,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 15,
+"par": 3,
+"yardage": 157,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 16,
+"par": 4,
+"yardage": 423,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 17,
+"par": 5,
+"yardage": 479,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+},
+{
+"number": 18,
+"par": 4,
+"yardage": 392,
+"drawn": false,
+"flag": "This hole is not mapped yet"
+}
+],
+"drawn": 8,
+"of": 18,
+"parAndYardage": "From the course's published scorecard, never measured",
+"sources": [
+"OpenStreetMap contributors (ODbL), read November 24, 2026: hole lines, fairways, greens, tees, bunkers, water",
+"Natural Resources Canada, High Resolution Digital Elevation Model, PEI 2020, 1 m (Open Government Licence - Canada): ground shading, tree lines, ground heights, and tee boxes the open map is missing"
+],
+"note": "Drawn by TeeTrip from OpenStreetMap and federal open LiDAR. A guide to the hole, not a survey. Yardages are the course's own."
+}

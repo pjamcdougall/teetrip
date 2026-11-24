@@ -414,7 +414,7 @@ def build(only=None):
         if only and c['slug'] not in only: continue
         ctx = prepare(c); slug = c['slug']; H = ctx['holes']; want = c['h']
         ok = {n: h for n, h in H.items() if not h['flag'] and 1 <= n <= max(want, 18)}
-        enough = len(ok) >= .6 * want
+        enough = len(ok) >= .6 * want or len(ok) >= 8  # a partly mapped course still shows the holes that are done
         rec = dict(slug=slug, name=c['n'], holesOnCard=want, mappedLines=len(H), drawn=sorted(ok) if enough else [], flagged={n: h['flag'] for n, h in H.items() if h['flag']},
                    missing=[n for n in range(1, want + 1) if n not in H], scorecard=bool(ctx['sc']), counts={k: sum(1 for f in ctx['own'] if f['k'] == k) for k in ('fairway', 'green', 'tee', 'bunker', 'hole')})
         report.append(rec)
